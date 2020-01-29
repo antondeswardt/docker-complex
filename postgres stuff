@@ -1,0 +1,6 @@
+instancename: multi-postgres
+username: postgres
+password: mysecretpassword
+databasename: fibvalues
+
+security groups: I Added to default AND existing EB one

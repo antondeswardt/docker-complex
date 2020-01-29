@@ -21,3 +21,16 @@ after_success:
   - docker push antondeswardt/docker-complex-nginx
   - docker push antondeswardt/docker-complex-server
   - docker push antondeswardt/docker-complex-worker
+
+ 
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-complex"
+  env: "DockerComplex-env"
+  bucket_name: "elasticbeanstalk-us-east-2-148576959747"
+  bucket_path: "docker-complex"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
